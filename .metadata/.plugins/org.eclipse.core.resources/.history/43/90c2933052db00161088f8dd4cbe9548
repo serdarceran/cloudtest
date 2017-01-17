@@ -1,0 +1,30 @@
+package com.example;
+
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class WhatEverWhat {
+
+	@Bean
+	public Team createTeam() {
+		Set<Player> players = new HashSet<>();
+		players.add(new Player("serdar", "kanat"));
+		players.add(new Player("mahir", "stoper"));
+		players.add(new Player("askam", "kaleci"));
+		Team team = new Team("GS", "Istanbul", players);
+		return team;
+	}
+	
+	@RequestMapping("hi/{name}")
+	public String hiThere(Map model, @PathVariable String name) {
+		model.put("name", name);
+		return "hello";
+	}
+}

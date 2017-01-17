@@ -1,0 +1,17 @@
+---
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8080
+ 
+---
+spring:
+  profiles: client-3
+  application:
+    name: lab-3-client
+    
+---
+spring:
+  profiles: client-4
+  application:
+    name: lab-4-client

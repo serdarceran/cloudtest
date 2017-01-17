@@ -1,0 +1,11 @@
+server:
+  port: 8011
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: client-1
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    
+          

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1484410073704_1" label="SOLUTION" name="SOLUTION">
+<item elementID="=lab-10-config-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-6-sentence-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-7-sentence-server-solution-reactive" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=common-config-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-7-sentence-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-5-word-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-3-client-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-3-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-5-sentence-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-10-config-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-6-sentence-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-6-word-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-7-sentence-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RemoteSystemsTempFiles" type="4"/>
+<item elementID="=lab-7-word-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-9-word-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/lab-1-boot-solution" type="4"/>
+<item elementID="=lab-1-boot-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-9-gateway" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-8-client" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-9-gateway-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-10-client-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-10-client" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=demo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-4-eureka-client-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-5-sentence-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-8-client-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-4-eureka-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=commmon-eureka-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-5-word-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-8-config-server" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=lab-8-config-server-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1484410092906_2" label="WORKS" name="WORKS">
+<item elementID="=spring-cloud-client-demo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=microservices" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=spring-cloud-config-demo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-cloud-euroka-server" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1484410060300_0" label="Window Working Set" name="Aggregate for window 1484410060300"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1484410108474_3" label="Multiple Working Sets" name="Aggregate:SOLUTION:WORKS:">
+<workingSet IMemento.internal.id="SOLUTION"/>
+<workingSet IMemento.internal.id="WORKS"/>
+</workingSet>
+<mruList name="WORKS"/>
+<mruList name="SOLUTION"/>
+</workingSetManager>

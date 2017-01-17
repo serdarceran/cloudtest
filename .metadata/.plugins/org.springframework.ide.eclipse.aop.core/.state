@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="lab-10-config-server"/>
+<aop-project name="lab-6-sentence-server"/>
+<aop-project name="lab-7-sentence-server-solution-reactive"/>
+<aop-project name="common-config-server"/>
+<aop-project name="lab-7-sentence-server"/>
+<aop-project name="lab-5-word-server-solution"/>
+<aop-project name="lab-3-client-solution"/>
+<aop-project name="lab-3-server-solution"/>
+<aop-project name="lab-5-sentence-server-solution"/>
+<aop-project name="lab-10-config-server-solution"/>
+<aop-project name="lab-6-sentence-server-solution"/>
+<aop-project name="spring-cloud-config-demo"/>
+<aop-project name="lab-6-word-server-solution"/>
+<aop-project name="lab-7-sentence-server-solution"/>
+<aop-project name="lab-7-word-server"/>
+<aop-project name="lab-9-word-server-solution"/>
+<aop-project name="microservices"/>
+<aop-project name="lab-1-boot-solution"/>
+<aop-project name="lab-9-gateway"/>
+<aop-project name="lab-8-client"/>
+<aop-project name="lab-9-gateway-solution"/>
+<aop-project name="lab-10-client-solution"/>
+<aop-project name="lab-10-client"/>
+<aop-project name="demo"/>
+<aop-project name="lab-4-eureka-client-solution"/>
+<aop-project name="spring-cloud-client-demo"/>
+<aop-project name="lab-5-sentence-server"/>
+<aop-project name="lab-8-client-solution"/>
+<aop-project name="lab-4-eureka-server-solution"/>
+<aop-project name="lab-5-word-server"/>
+<aop-project name="commmon-eureka-server"/>
+<aop-project name="lab-8-config-server"/>
+<aop-project name="lab-8-config-server-solution"/>
+</aop-reference-model>
