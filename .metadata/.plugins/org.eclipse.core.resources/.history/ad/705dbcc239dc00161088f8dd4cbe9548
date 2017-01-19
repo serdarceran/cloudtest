@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/serdarceran/springcloud1/blob/master/configurationfile1
-          search-paths: ConfigData
