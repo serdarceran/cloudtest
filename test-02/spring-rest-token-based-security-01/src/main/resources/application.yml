@@ -1,0 +1,22 @@
+
+jwt:
+  header: Authorization
+  secret: my-very-secret-key
+logging:
+  level:
+    org.springframework.security: DEBUG
+server:
+  port: 9000
+  ssl:
+    key-store: classpath:static/keystore.p12
+    key-store-password: 464197
+    keyStoreType: PKCS12
+    keyAlias: tomcat
+    
+spring:
+  resources:
+    chain:
+      enabled: true
+management:
+  security:
+    enabled: true # set to false to disable 'default' Spring Boot security
