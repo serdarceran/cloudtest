@@ -1,0 +1,7 @@
+---
+applications:
+- name: eureka-service
+  memory: 512M
+  instances: 1
+  host: my-eureka-service
+  path: target/eureka-service.jar
