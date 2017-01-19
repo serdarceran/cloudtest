@@ -45,7 +45,7 @@ function deploy_eureka() {
 }
 
 function deploy_photo_service(){
-  cf cs mLab sandbox photo-service-mongodb
+  cf cs mongolab sandbox photo-service-mongodb
   deploy_app photo-service
 }
 
@@ -69,9 +69,9 @@ function reset(){
   cf delete-orphaned-routes
 }
 
-#mvn -DskipTests=true clean install
+mvn -DskipTests=true clean install
 
-#login
+login
 reset
 deploy_eureka
 deploy_photo_service
