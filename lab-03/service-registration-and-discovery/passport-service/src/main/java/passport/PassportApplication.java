@@ -10,15 +10,11 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -29,12 +25,29 @@ public class PassportApplication {
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(PassportApplication.class)
-                .web(false)
+//                .web(false)
                 .run(args);
     }
 }
 
-@Component
+@Controller
+class UiController {
+
+    @Autowired
+    private BookmarkClient bookmarkClient;
+
+    @RequestMapping("/{userId}/bookmarks")
+    public String getBookmarks(Model model, @PathVariable String userId) {
+        System.out.println(">>>>> Request for " + userId);
+        List<Bookmark> bookmarks = bookmarkClient.getBookmarks(userId);
+        model.addAttribute("userId", userId);
+//        model.addAttribute("bookmarks", bookmarks);
+        System.out.println(">>>>> END Request for " + bookmarks.size());
+        return "bookmarks";
+    }
+}
+
+//@Component
 class DiscoveryClientExample implements CommandLineRunner {
 
     @Autowired
@@ -43,15 +56,15 @@ class DiscoveryClientExample implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         discoveryClient.getInstances("photo-service").forEach((ServiceInstance s) -> {
-            System.out.println(ToStringBuilder.reflectionToString(s));
+            System.out.println(">>>> " + ToStringBuilder.reflectionToString(s));
         });
         discoveryClient.getInstances("bookmark-service").forEach((ServiceInstance s) -> {
-            System.out.println(ToStringBuilder.reflectionToString(s));
+            System.out.println(">>>>> " + ToStringBuilder.reflectionToString(s));
         });
     }
 }
 
-@Component
+//@Component
 class FeignExample implements CommandLineRunner {
 
     @Autowired
@@ -59,8 +72,9 @@ class FeignExample implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        System.out.print("Getting Bookmarks...");
-        this.bookmarkClient.getBookmarks("serdar").forEach(System.out::println);
+        System.out.print(">>>> Getting Bookmarks...");
+        this.bookmarkClient.getBookmarks("cemre").forEach(b-> System.out.println(">>>>> " + b.getId() + ", " + b.getHref()));
+        System.out.print(">>>> Getting Bookmarks...DONE");
     }
 }
 
