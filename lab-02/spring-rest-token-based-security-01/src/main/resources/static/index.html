@@ -12,27 +12,6 @@
 
 <body>
     <div ng-controller="mainController">
-        <label>What is your twitter handle?</label>
-        <input ng-model="twHandle" type="text" />
-        <hr/>
-        <label>twitter.com/{{ lowercaseHandle() }}</label>
-        <div class="alert" ng-hide="twHandle.length === characters"
-             ng-class="{'alert-warning': twHandle.length < characters, 'alert-danger': twHandle.length > characters}">
-            <div ng-show="twHandle.length < characters">
-                Less than {{ characters }} letters.
-            </div>
-            <div ng-show="twHandle.length > characters">
-                More than {{ characters }} letters.
-            </div>
-        </div>
-        <div >
-            <h3>Rules:</h3>
-            <ol>
-                <li ng-repeat="rule in rules">{{ rule.rulename }}</li>
-            </ol>
-            
-        </div>
-        <hr/>
         <div>
             <input type="button" ng-click="login()" value="Login" />
             <br/>

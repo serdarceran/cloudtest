@@ -2,28 +2,8 @@
 
 var myApp = angular.module("myApp", []);
 
-myApp.controller("mainController", ['$scope', '$filter','$timeout','$http', function($scope, $filter, $timeout, $http) {
-    $scope.twHandle = '';
-    $scope.characters = 5;
-                                    
-    $scope.lowercaseHandle = function() {
-        return $filter('lowercase')($scope.twHandle);
-    }
-    
-    $scope.lowercaseHandle2 = $filter('lowercase')($scope.twHandle);
-    
-    $scope.$watch('twHandle', function(newValue, oldValue) {
-        console.log('old value:' + oldValue)
-        console.log('new value:' + newValue);
-        
-    });
-    
-    $scope.rules = [
-         { rulename: "Must be 5 characters"}
-        ,{ rulename: "Must be unique"}
-        ,{ rulename: "Must be cool"}
-    ];
-    
+myApp.controller("mainController", ['$scope','$http', function($scope, $http) {
+
     $scope.login = function() {
         $http({
             method : "GET",

@@ -8,8 +8,8 @@ logging:
 server:
   port: 9000
   ssl:
-    key-store: classpath:static/keystore.p12
-    key-store-password: 464197
+    key-store: classpath:static/keystore.p12 # invalid! create new one
+    key-store-password: 123456 # invalid! update it
     keyStoreType: PKCS12
     keyAlias: tomcat
     
