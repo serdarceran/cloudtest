@@ -38,11 +38,9 @@ class UiController {
 
     @RequestMapping("/{userId}/bookmarks")
     public String getBookmarks(Model model, @PathVariable String userId) {
-        System.out.println(">>>>> Request for " + userId);
         List<Bookmark> bookmarks = bookmarkClient.getBookmarks(userId);
         model.addAttribute("userId", userId);
-//        model.addAttribute("bookmarks", bookmarks);
-        System.out.println(">>>>> END Request for " + bookmarks.size());
+        model.addAttribute("bookmarks", bookmarks);
         return "bookmarks";
     }
 }

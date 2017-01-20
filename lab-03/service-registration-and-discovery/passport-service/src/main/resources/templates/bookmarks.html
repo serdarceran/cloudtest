@@ -6,5 +6,19 @@
 </head>
 <body>
     <p th:text="'Hello, ' + ${userId} + '!'" />
+    <table>
+        <tr>
+            <th>User Id</th>
+            <th>Description</th>
+            <th>Reference</th>
+            <th>Label</th>
+        </tr>
+        <tr th:each="bookmark : ${bookmarks}">
+            <td th:text="${bookmark.userId}">fddfd</td>
+            <td th:text="${bookmark.description}">1234</td>
+            <td th:text="${bookmark.href}">http://dfsdf.com</td>
+            <td th:text="${bookmark.label}">the label</td>
+        </tr>
+    </table>
 </body>
 </html>
