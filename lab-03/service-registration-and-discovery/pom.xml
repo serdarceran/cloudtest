@@ -20,6 +20,7 @@
         <module>bookmark-service</module>
         <module>passport-service</module>
         <module>eureka-service</module>
+        <module>config-service</module>
     </modules>
 
     <build>
