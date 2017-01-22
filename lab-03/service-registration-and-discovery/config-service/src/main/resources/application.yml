@@ -1,11 +1,13 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/serdarceran/cloudtest
+#          search-paths: lab-03
 
 server:
-  port: ${vcap.application.port:9098}
-
-spring:
-  jpa:
-    generate-ddl: true
-
+  port: ${vcap.application.port:9008}
 
 eureka:
   client:
