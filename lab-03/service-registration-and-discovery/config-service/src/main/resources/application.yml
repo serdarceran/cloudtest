@@ -4,7 +4,8 @@ spring:
       server:
         git:
           uri: https://github.com/serdarceran/cloudtest
-          search-paths: test2/test3/
+          search-paths: lab-03/service-registration-and-discovery/config-service/src/main/resources/client-configs
+          force-pull: true
 #          'lab-03/service-registration-and-discovery/config-service/src/main/resources/client-configs','test2'
 
 server:
