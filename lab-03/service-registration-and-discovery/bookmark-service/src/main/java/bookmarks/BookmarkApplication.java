@@ -24,7 +24,7 @@ public class BookmarkApplication {
         SpringApplication.run(BookmarkApplication.class, args);
     }
 
-    @Bean
+//    @Bean
     CommandLineRunner init(BookmarkRepository bookmarkRepository) {
         return args -> {
             bookmarkRepository.deleteAll();
