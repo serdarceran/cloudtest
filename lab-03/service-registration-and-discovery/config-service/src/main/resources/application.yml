@@ -3,10 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/serdarceran/cloudtest
-          search-paths: lab-03/service-registration-and-discovery/config-service/src/main/resources/client-configs
-          force-pull: true
-#          'lab-03/service-registration-and-discovery/config-service/src/main/resources/client-configs','test2'
+          uri: https://github.com/serdarceran/config-repo
 
 server:
   port: ${vcap.application.port:9008}

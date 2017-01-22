@@ -3,7 +3,7 @@ applications:
 - name: photo-service
   memory: 512M
   instances: 1
-  host: photo-service-${random-word}
+  host: serdar-ceran-photo-service
   domain: cfapps.io
   path: target/photo-service.jar
   services:

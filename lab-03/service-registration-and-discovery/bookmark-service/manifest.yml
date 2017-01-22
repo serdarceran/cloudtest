@@ -3,7 +3,7 @@ applications:
 - name: bookmark-service
   memory: 512M
   instances: 1
-  host: bookmark-service-${random-word}
+  host: serdar-ceran-bookmark-service
   path: target/bookmark-service.jar
   services:
       - eureka-service
