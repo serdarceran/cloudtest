@@ -15,17 +15,20 @@ public class ScriptBuilder {
     @Autowired
     private ScriptFinder scriptFinder;
 
-    public String build(String scriptName, String mhVersion) {
+    public String build(String scriptName, String mhVersion, String mhType) {
         final StringBuilder stringBuilder = new StringBuilder();
-        getScript(scriptName, mhVersion, stringBuilder);
+        getScript(scriptName, mhVersion, mhType, stringBuilder);
         return stringBuilder.toString();
     }
 
-    private void getScript(String scriptName, String mhVersion, StringBuilder stringBuilder) {
-        Optional<ScriptHolder> foundScript = scriptFinder.getScript(scriptName, mhVersion);
-        stringBuilder.insert(0, "\n\n");
-        stringBuilder.insert(0, foundScript.map(ScriptHolder::getContent).orElse(""));
-        foundScript.map(ScriptHolder::getImports).get().stream().forEach(importedScriptName->
-                getScript(importedScriptName, mhVersion,stringBuilder));
+    private void getScript(String scriptName, String mhVersion, String mhType, StringBuilder stringBuilder) {
+        Optional<ScriptHolder> foundScript = scriptFinder.getScript(scriptName, mhVersion, mhType);
+        foundScript.ifPresent(sh-> {
+            stringBuilder.insert(0, "\n\n");
+            stringBuilder.insert(0, sh.getContent());
+            sh.getImports().stream().forEach(importedScriptName->
+                    getScript(importedScriptName, mhVersion,mhType, stringBuilder));
+        });
+
     }
 }

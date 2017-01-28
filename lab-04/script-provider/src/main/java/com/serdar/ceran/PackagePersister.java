@@ -35,7 +35,8 @@ public class PackagePersister  implements CommandLineRunner {
                     PackageMeta metaJson = jsonMapper.readValue(f, PackageMeta.class);
                     ScriptPackage scriptPackage = new ScriptPackage();
                     scriptPackage.version = metaJson.getVersion();
-                    scriptPackage.mhVersion = metaJson.getMhVersion();
+                    scriptPackage.mhVersionCpp = metaJson.getMhVersionCpp();
+                    scriptPackage.mhVersionJava = metaJson.getMhVersionJava();
                     scriptPackage.scripts = new HashSet<>();
 
                     Arrays.stream(p.listFiles((dir, name) -> name.endsWith(".js"))).forEach(jsFile-> {

@@ -1,4 +1,5 @@
 {
   "version": 4,
-  "mhVersion": "mh0128"
+  "mhVersionCpp": "mh0128Cpp",
+  "mhVersionJava": "mh0628Java"
 }

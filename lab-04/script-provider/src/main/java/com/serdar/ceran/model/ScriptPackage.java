@@ -10,7 +10,8 @@ import java.util.Set;
 public class ScriptPackage {
     @Id
     public Long version;
-    public String mhVersion;
+    public String mhVersionCpp;
+    public String mhVersionJava;
     public Set<ScriptHolder> scripts;
 
     public ScriptPackage() {
@@ -20,8 +21,12 @@ public class ScriptPackage {
         return version;
     }
 
-    public String getMhVersion() {
-        return mhVersion;
+    public String getMhVersionCpp() {
+        return mhVersionCpp;
+    }
+
+    public String getMhVersionJava() {
+        return mhVersionJava;
     }
 
     public Set<ScriptHolder> getScripts() {

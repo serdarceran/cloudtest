@@ -5,12 +5,8 @@ package com.serdar.ceran.model;
  */
 public class PackageMeta {
     private Long version;
-    private String mhVersion;
-
-    public PackageMeta(Long version, String mhVersion) {
-        this.version = version;
-        this.mhVersion = mhVersion;
-    }
+    private String mhVersionCpp;
+    private String mhVersionJava;
 
     public PackageMeta() {
     }
@@ -19,15 +15,20 @@ public class PackageMeta {
         return version;
     }
 
-    public String getMhVersion() {
-        return mhVersion;
+    public String getMhVersionJava() {
+        return mhVersionJava;
+    }
+
+    public String getMhVersionCpp() {
+        return mhVersionCpp;
     }
 
     @Override
     public String toString() {
         return "PackageMeta{" +
                 "version=" + version +
-                ", mhVersion='" + mhVersion + '\'' +
+                ", mhVersionCpp='" + mhVersionCpp + '\'' +
+                ", mhVersionJava='" + mhVersionJava + '\'' +
                 '}';
     }
 }
