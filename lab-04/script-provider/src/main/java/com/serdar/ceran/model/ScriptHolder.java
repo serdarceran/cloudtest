@@ -9,7 +9,7 @@ import java.util.Set;
 public class ScriptHolder {
     public String name;
     public String content = "";
-    public Set<ScriptHolder> imports = Collections.emptySet();
+    public Set<String> imports = Collections.emptySet();
 
     public ScriptHolder() {
     }
@@ -22,7 +22,7 @@ public class ScriptHolder {
         return content;
     }
 
-    public Set<ScriptHolder> getImports() {
+    public Set<String> getImports() {
         return imports;
     }
 }

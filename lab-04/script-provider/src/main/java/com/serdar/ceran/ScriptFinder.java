@@ -17,7 +17,7 @@ public class ScriptFinder {
     private ScriptPackageRepository scriptPackageRepository;
 
     public Optional<ScriptHolder> getScript(String scriptName, String mhVersion) {
-        ScriptPackage newestPackageBelongsMhVersion = scriptPackageRepository.findFirstByMhVersion(mhVersion);
+        ScriptPackage newestPackageBelongsMhVersion = scriptPackageRepository.findFirstByMhVersionOrderByVersionDesc(mhVersion);
         long version = newestPackageBelongsMhVersion.getVersion();
         Optional<ScriptHolder> scriptHolder = getScriptByName(newestPackageBelongsMhVersion, scriptName);
         while (!scriptHolder.isPresent()) {
