@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.testutil.MyTestNGAnnotation;
+import com.example.testutil.MyTestNGAnnotationListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -9,12 +11,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @DirtiesContext
+@Listeners(value = MyTestNGAnnotationListener.class)
 public class SampleTestNGApplicationTests extends AbstractTestNGSpringContextTests {
 
     @Autowired
@@ -35,7 +39,7 @@ public class SampleTestNGApplicationTests extends AbstractTestNGSpringContextTes
 	private TestRestTemplate restTemplate;
 
 	@Test(dataProvider = "test1")
-//	@MyTestNGAnnotation(name="Jack", city="San Francisco", state="California")
+	@MyTestNGAnnotation(name="Jack", city="San Francisco", state="California")
 	public void testMyAnnotation(String s,Integer i,String t, MyService myService) {
         System.out.println("test2:: "+s+" Integer : "+i+" Hello "+t );
         System.out.println(">>> " + myService.getMessage());
