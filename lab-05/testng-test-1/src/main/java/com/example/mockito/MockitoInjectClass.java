@@ -2,6 +2,7 @@ package com.example.mockito;
 
 import com.example.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
 public class MockitoInjectClass {
 
     @Autowired
+    @Qualifier("test")
     private MyService myService;
 
     public String getStr(){

@@ -1,5 +1,8 @@
-package com.example;
+package com.example.s2;
 
+import com.example.MyActualService;
+import com.example.mockito.MyMockService;
+import com.example.MyService;
 import com.example.testutil.MyTestNGAnnotation;
 import com.example.testutil.MyTestNGAnnotationListener;
 import org.springframework.beans.factory.annotation.Autowired;

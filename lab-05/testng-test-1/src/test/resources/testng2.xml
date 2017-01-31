@@ -4,13 +4,13 @@
     <test name="example1">
 
         <parameter name="dbconfig" value="db.properties" />
-        <parameter name="poolsize" value="10" />
+        <parameter name="poolsize" value="19990" />
 
         <packages>
-            <package name="com.example.s1.*"/>
+            <package name="com.example.s2.*"/>
         </packages>
         <!--<classes>-->
-            <!--<class name="com.example.s1." />-->
+            <!--<class name="com.example.s2.SampleTestNGApplicationTests" />-->
         <!--</classes>-->
 
     </test>

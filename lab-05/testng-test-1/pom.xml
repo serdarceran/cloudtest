@@ -22,6 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<test.scope></test.scope>
 	</properties>
 
 	<dependencies>
@@ -68,6 +69,21 @@
 
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>s1</id>
+			<properties>
+				<test.scope>src/test/resources/testng.xml</test.scope>
+			</properties>
+		</profile>
+		<profile>
+			<id>s2</id>
+			<properties>
+				<test.scope>src/test/resources/testng2.xml</test.scope>
+			</properties>
+		</profile>
+
+	</profiles>
 	<build>
 		<plugins>
 
@@ -77,7 +93,7 @@
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+						<suiteXmlFile>${test.scope}</suiteXmlFile>
 						<!--<suiteXmlFile>suites-test-testng.xml</suiteXmlFile>-->
 					</suiteXmlFiles>
 				</configuration>

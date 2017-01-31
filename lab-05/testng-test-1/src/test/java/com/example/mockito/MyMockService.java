@@ -1,5 +1,6 @@
-package com.example;
+package com.example.mockito;
 
+import com.example.MyService;
 import org.springframework.stereotype.Component;
 
 /**
