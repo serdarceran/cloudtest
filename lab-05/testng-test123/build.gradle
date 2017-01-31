@@ -69,6 +69,7 @@ integrationTest {
 			useDefaultListeners = true
 		}
 	testLogging.showStandardStreams = true
+	environment "spring.profiles.active", project.ext.agentType
 }
 
 test {
