@@ -1,18 +1,17 @@
-<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
-<suite name="test-parameter">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-    <test name="example1">
+<suite name="SuiteSAJ">
+    <test name="TestSAJ">
 
-        <parameter name="dbconfig" value="db.properties" />
-        <parameter name="poolsize" value="10" />
+        <groups>
+            <run>
+                <include name="GroupSAJ" />
+            </run>
+        </groups>
 
         <packages>
-            <package name="com.example.s1.*"/>
+            <package name="com.example.test.*"/>
         </packages>
-        <!--<classes>-->
-            <!--<class name="com.example.s1." />-->
-        <!--</classes>-->
-
     </test>
-
 </suite>
