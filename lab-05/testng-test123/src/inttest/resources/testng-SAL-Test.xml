@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="test-parameter">
+
+    <test name="example1">
+
+        <parameter name="dbconfig" value="db.properties" />
+        <parameter name="poolsize" value="19990" />
+
+        <packages>
+            <package name="com.example.s2.*"/>
+        </packages>
+        <!--<classes>-->
+            <!--<class name="com.example.s2.SampleTestNGApplicationTests" />-->
+        <!--</classes>-->
+
+    </test>
+
+</suite>

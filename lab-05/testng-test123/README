@@ -1,0 +1,8 @@
+gradle -i clean integrationTest -PagentType=SAL
+
+
+gradle -i clean integrationTest -PagentType=SAJ
+
+gradle -i clean test
+
+
