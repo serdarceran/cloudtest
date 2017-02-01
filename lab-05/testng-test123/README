@@ -1,8 +1,5 @@
-gradle -i clean integrationTest -PagentType=SAL
-
-
-gradle -i clean integrationTest -PagentType=SAJ
-
-gradle -i clean test
+gradle -i clean integrationTest -PagentType=SAL -b build.gradle
+gradle -i clean integrationTest -PagentType=SAJ -b build.gradle
+gradle -i clean test -b build.gradle
 
 

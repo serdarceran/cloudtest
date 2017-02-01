@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.1.RELEASE'
+		agentType = project.hasProperty("agentType") ? project.property("agentType") : ""
 	}
 	repositories {
 		mavenCentral()
@@ -10,80 +11,16 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-
-jar {
-	baseName = 'demo'
-	version = '0.0.1-SNAPSHOT'
-}
-sourceCompatibility = 1.8
-
-repositories {
-	mavenCentral()
-}
-
-sourceSets {
-	integrationTest {
-		java {
-			compileClasspath += main.output + test.output
-			runtimeClasspath += main.output + test.output
-			srcDir file('src/inttest/java')
-		}
-		resources.srcDir file('src/inttest/resources')
-	}
-}
-
-configurations {
-	integrationTestCompile.extendsFrom testCompile
-	integrationTestRuntime.extendsFrom testRuntime
-}
-
-dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test',
-			'org.testng:testng:6.10',
-			'org.assertj:assertj-core',
-			'org.mockito:mockito-all:1.9.5')
-	integrationTestCompile('org.springframework.boot:spring-boot-starter-test',
-			'org.testng:testng:6.10',
-			'org.assertj:assertj-core',
-			'org.mockito:mockito-all:1.9.5')
-}
-
-//Create the task that runs the integration tests found from the
-//configured source directory and uses the correct classpath.
-task integrationTest(type: Test) {
-	testClassesDir = sourceSets.integrationTest.output.classesDir
-	classpath = sourceSets.integrationTest.runtimeClasspath
-	//If you want to ensure that integration tests are run every time when you invoke
-	//this task, uncomment the following line.
-	//outputs.upToDateWhen { false }
-}
+apply from: 'base.gradle'
 
 integrationTest {
 	useTestNG()
-		{
-			suites 'src/inttest/resources/testng-' + project.ext.agentType + '-Test.xml'
-			useDefaultListeners = true
-		}
+			{
+				suites 'src/inttest/resources/testng-' + project.ext.agentType + '-Test.xml'
+				useDefaultListeners = true
+			}
 	testLogging.showStandardStreams = true
 	environment "spring.profiles.active", project.ext.agentType
 }
 
-test {
-	useTestNG()
-	testLogging.showStandardStreams = true
-}
-
-//Ensure that the check task fails the build if there are failing integration tests.
-check.dependsOn integrationTest
-//Ensure that our unit tests are run before our integration tests
-integrationTest.mustRunAfter test
-
-//Ensure that the HTML reports of unit and integration tests are written to different directories.
-tasks.withType(Test) {
-	reports.html.destination = file("${reporting.baseDir}/${name}")
-}
 
