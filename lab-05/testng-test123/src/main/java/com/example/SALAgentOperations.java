@@ -1,16 +1,27 @@
 package com.example;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by serdar on 1.02.2017.
  */
-@Service
-@Profile("SAL")
+//@Service
+//@Profile("SAL")
 public class SALAgentOperations implements  AgentOperations{
+    @Autowired
+    private InjectMe injectMe;
+
+    String firmwareVersion;
+
+    public SALAgentOperations() {
+    }
+
+    public SALAgentOperations(String firmwareVersion) {
+        this.firmwareVersion = firmwareVersion;
+    }
+
     @Override
     public String getAgentType() {
-        return "SAL";
+        return "SAL ::: " + firmwareVersion + " :: " + injectMe.getValue();
     }
 }
