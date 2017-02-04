@@ -72,6 +72,9 @@
 	<profiles>
 		<profile>
 			<id>s1</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<properties>
 				<test.scope>src/test/resources/testng.xml</test.scope>
 			</properties>

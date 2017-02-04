@@ -1,8 +1,8 @@
 package com.example.s1;
 
 import com.example.MyActualService;
-import com.example.mockito.MyMockService;
 import com.example.MyService;
+import com.example.mockito.MyMockService;
 import com.example.testutil.MyTestNGAnnotation;
 import com.example.testutil.MyTestNGAnnotationListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,6 +40,20 @@ public class SampleTestNGApplicationTests extends AbstractTestNGSpringContextTes
 
     @Autowired
     private TestRestTemplate restTemplate;
+
+//    @BeforeTest
+//    public void startTest(final ITestContext testContext) {
+//        System.out.println(">>>>>>>>>>>>>>: " + testContext.getAttribute("name")); // it prints "Check name test"
+//        System.out.println(">>>>>>>>>>>>>>: " + testContext.getAttribute("city")); // it prints "Check name test"
+//    }
+
+    @BeforeMethod
+    public void handleTestMethodName(Method method)
+    {
+//       String city = method.getTestMethod().getConstructorOrMethod().getMethod().getAnnotation(MyTestNGAnnotation.class).city();
+        String city =method.getAnnotation(MyTestNGAnnotation.class).city();
+        System.out.println("??????: " + city);
+    }
 
     @Test(dataProvider = "test1")
     @MyTestNGAnnotation(name = "Jack", city = "San Francisco", state = "California")

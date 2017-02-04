@@ -75,12 +75,16 @@ public class MyTestNGAnnotationListener implements IInvokedMethodListener, ITest
     }
 
     public void onStart(ITestContext context) {
+        context.setAttribute("name", "serdar");
+        context.setAttribute("city", city);
+
         for(ITestNGMethod m1 : context.getAllTestMethods()) {
             if(m1.getConstructorOrMethod().getMethod().isAnnotationPresent(MyTestNGAnnotation.class)) {
                 //capture metadata information.
                 name = m1.getConstructorOrMethod().getMethod().getAnnotation(MyTestNGAnnotation.class).name();
                 city = m1.getConstructorOrMethod().getMethod().getAnnotation(MyTestNGAnnotation.class).city();
                 state = m1.getConstructorOrMethod().getMethod().getAnnotation(MyTestNGAnnotation.class).state();
+
             }
         }
         
