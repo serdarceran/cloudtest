@@ -16,7 +16,7 @@ apply from: 'base.gradle'
 integrationTest {
 	useTestNG()
 			{
-				suites 'src/inttest/resources/testng-' + project.ext.agentType + '-Test.xml'
+				suites 'src/inttest/resources/testng-Test.xml'
 				useDefaultListeners = true
 			}
 	testLogging.showStandardStreams = true

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteAgent" configfailurepolicy="continue" >
+    <test name="TestAgent">
+
+        <classes>
+            <class name="com.example.test.TestFactory"/>
+            <class name="com.example.test.SampleTestNGApplicationTests4"/>
+        </classes>
+        
+
+    </test>
+    <listeners>
+        <listener class-name="com.example.test.AgentTestInterceptor"/>
+    </listeners>
+</suite>
