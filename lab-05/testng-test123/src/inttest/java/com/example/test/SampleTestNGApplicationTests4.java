@@ -19,9 +19,6 @@ import java.lang.reflect.Method;
 @DirtiesContext
 public class SampleTestNGApplicationTests4 extends AbstractTestNGSpringContextTests  {
 
-    private static  final String GROUP_SAJ = "SAJ";
-    private static  final String GROUP_SAL = "SAL";
-
     @Autowired
     private BeanFactory beanFactory;
 
@@ -46,10 +43,10 @@ public class SampleTestNGApplicationTests4 extends AbstractTestNGSpringContextTe
     @BeforeMethod(alwaysRun = true)
     public void handleTestMethodName(Method method, ITestContext testContext) {
 
-        if (GROUP_SAJ.equals(agentType)) {
+        if (TestFactory.GROUP_SAJ.equals(agentType)) {
             agentOperations = beanFactory.getBean(SAJAgentOperations.class, firmware);
         }
-        else if (GROUP_SAL.equals(agentType)) {
+        else if (TestFactory.GROUP_SAL.equals(agentType)) {
             agentOperations = beanFactory.getBean(SALAgentOperations.class, firmware);
         }
     }

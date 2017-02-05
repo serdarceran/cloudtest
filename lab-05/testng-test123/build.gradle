@@ -1,7 +1,6 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.1.RELEASE'
-		agentType = project.hasProperty("agentType") ? project.property("agentType") : ""
 	}
 	repositories {
 		mavenCentral()
@@ -20,7 +19,6 @@ integrationTest {
 				useDefaultListeners = true
 			}
 	testLogging.showStandardStreams = true
-	environment "spring.profiles.active", project.ext.agentType
 }
 
 

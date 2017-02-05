@@ -8,8 +8,6 @@
             <class name="com.example.test.TestFactory"/>
             <class name="com.example.test.SampleTestNGApplicationTests4"/>
         </classes>
-        
-
     </test>
     <listeners>
         <listener class-name="com.example.test.AgentTestInterceptor"/>
