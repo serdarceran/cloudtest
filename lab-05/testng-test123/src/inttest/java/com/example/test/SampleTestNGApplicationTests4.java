@@ -52,36 +52,39 @@ public class SampleTestNGApplicationTests4 extends AbstractTestNGSpringContextTe
     }
 
     @Test
-    @IgnoreSAJ(firmware={"*"})
+    @ExcludeSAJ(firmware={"*"})
     public void testForSAL() {
-        System.out.println(">>>>>>>>>>>>>>>>>>>Test Executed for SAL");
+        System.out.println(">>>>>>>>>>>>>>>>>>>Test Executed for only SAL");
         System.out.println(" but, Agent Type: " + agentOperations.getAgentType());
     }
 
     @Test
-    @IgnoreSAL(firmware={"2.1.0"})
-    @IgnoreSAJ(firmware = {"*"})
-    public void testForSAL_2_0_0() {
-        System.out.println(">>>>>>>>>>>>>>>>>>>Test Executed for SAL");
+    @ExcludeSAL(firmware={"*"})
+    public void testForOnlySAJ() {
+        System.out.println(">>>>>>>>>>>>>>>>Test Executed for only SAJ");
         System.out.println(" but, Agent Type: " + agentOperations.getAgentType());
     }
 
     @Test
-    @IgnoreSAL(firmware={"*"})
-    public void testForSAJ() {
-        System.out.println(">>>>>>>>>>>>>>>>Test Executed for SAJ");
+    public void testForAll() {
+        System.out.println(">>>>>>>>>>>>>>>>Test Executed for All");
         System.out.println(" but, Agent Type: " + agentOperations.getAgentType());
     }
 
     @Test
-    public void testForSALandSAJ() {
-        System.out.println(">>>>>>>>>>>>>>>>Test Executed for SAL and SAJ");
+    @ExcludeSAL(firmware={"2.1.0"})
+    @ExcludeSAJ(firmware = {"*"})
+    @IncludeSAJ(firmware = {"1.4.5"})
+    public void testFor_SpecificSAL_AND_SpecificSAJ() {
+        System.out.println(">>>>>>>>>>>>>>>>>>>Test Executed for SAL (NOT 2.1.0) or SAJ (1.4.5)");
         System.out.println(" but, Agent Type: " + agentOperations.getAgentType());
     }
 
-
-
-
-
-
+    @Test
+    @ExcludeSAL(firmware={"*"})
+    @IncludeSAL(firmware={"3.4.8"})
+    public void testForSAJAndSpecificSAL() {
+        System.out.println(">>>>>>>>>>>>>>>>Test Executed for SAJ or SAL (3.4.8)");
+        System.out.println(" but, Agent Type: " + agentOperations.getAgentType());
+    }
 }

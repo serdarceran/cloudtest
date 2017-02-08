@@ -19,12 +19,23 @@ public class AgentTestInterceptor implements  IMethodInterceptor {
             if(m.getInstance() instanceof  SampleTestNGApplicationTests4) {
                 SampleTestNGApplicationTests4 s = (SampleTestNGApplicationTests4) m.getInstance();
                 if(s.getAgentType().equals("SAJ")) {
-                    IgnoreSAJ annotation = m.getMethod().getConstructorOrMethod().getMethod().getAnnotation(IgnoreSAJ.class);
-                    if(annotation == null || !isFirmwareMatch(annotation.firmware(), s.getFirmware())) retval.add(m);
-
+                    IncludeSAJ includeAnnotation = m.getMethod().getConstructorOrMethod().getMethod().getAnnotation(IncludeSAJ.class);
+                    if(includeAnnotation != null && isFirmwareMatch(includeAnnotation.firmware(), s.getFirmware()))
+                        retval.add(m);
+                    else {
+                        ExcludeSAJ excludeAnnotation = m.getMethod().getConstructorOrMethod().getMethod().getAnnotation(ExcludeSAJ.class);
+                        if(excludeAnnotation == null || !isFirmwareMatch(excludeAnnotation.firmware(), s.getFirmware()))
+                            retval.add(m);
+                    }
                 } else if(s.getAgentType().equals("SAL")) {
-                    IgnoreSAL annotation = m.getMethod().getConstructorOrMethod().getMethod().getAnnotation(IgnoreSAL.class);
-                    if (annotation == null || !isFirmwareMatch(annotation.firmware(), s.getFirmware())) retval.add(m);
+                    IncludeSAL includeAnnotation = m.getMethod().getConstructorOrMethod().getMethod().getAnnotation(IncludeSAL.class);
+                    if(includeAnnotation != null && isFirmwareMatch(includeAnnotation.firmware(), s.getFirmware()))
+                        retval.add(m);
+                    else {
+                        ExcludeSAL excludedAnnotation = m.getMethod().getConstructorOrMethod().getMethod().getAnnotation(ExcludeSAL.class);
+                        if (excludedAnnotation == null || !isFirmwareMatch(excludedAnnotation.firmware(), s.getFirmware()))
+                            retval.add(m);
+                    }
                 }
             }
         });

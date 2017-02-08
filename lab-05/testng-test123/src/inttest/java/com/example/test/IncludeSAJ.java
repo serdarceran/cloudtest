@@ -7,6 +7,6 @@ import java.lang.annotation.RetentionPolicy;
  * A Custom Annotation to inject additional information into a TestNG Test
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface IgnoreSAJ {
+public @interface IncludeSAJ {
     String[] firmware() default {};
 }
