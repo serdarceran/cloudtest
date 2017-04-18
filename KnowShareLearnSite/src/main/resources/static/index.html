@@ -16,6 +16,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>	
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />
      <script type="text/javascript">
 		$(document).ready(function() {
@@ -69,6 +71,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 </div>
 <!--------------------- Main Content ------------------->
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    First Name : <input type="text" ng-model="firstName"><br> 
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br> Full Name: {{firstName + "  :: " + lastName}}
+
+</div>
 <div class="wrap">
 	<div class="main">
 		<div class="content">
@@ -293,6 +302,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<p>Compant Name © All Rights Reseverd | Design by  <a href="http://w3layouts.com">W3Layouts</a> </p>
 		   </div>	 
   </div>
+
 </body>
 </html>
 
